@@ -1,14 +1,19 @@
 //when i click on the generate button, prompts appear
 var generateBtn = document.querySelector("#generate");
-
+var yourNewPassWord = []
 
 var passwordInfo = ["Y"]
-var arrayPassword = [""]
+var arrayPassword = []
 var acceptableChoices = ["Y", "N"]
-var alphaUpper = "QWERTYUIOPASDFGHJKLZXCVBNM".split("")
-var alphaLower = "qwertyuiopasdfghjklzxcvbnm".split("")
-var possibleNumbers = "1234567890".split("")
-var possibleSymbols = "~!@#$%^&*()_+-={}|[]|:;'<>?,./".split("")
+var alphaUpper = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P", "A", "S", "D", "F", "G", "H", "J", "K", "L", "Z", "X", "C", "V", "B", "N", "M"]
+var alphaLower = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p", "a", "s", "d", "f", "g", "h", "j", "k", "l", "z", "x", "c", "v", "b", "n", "m"]
+var possibleNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+var possibleSymbols = ["~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "{", "}", "|", "[", "]", "|", ":", ";", "'", "<", ">", "?", ",", ".", "/"]
+
+console.log(alphaUpper)
+console.log(alphaLower)
+console.log(possibleNumbers)
+console.log(possibleSymbols)
 
 function prompting () {
 function passwordCriteria () {
@@ -51,25 +56,31 @@ function numberCasing () {
         prompting()
     }
 }
+
 passwordCriteria()
 upperCasing()
 lowerCasing()
 symbolCasing()
 numberCasing()
 }
+
+
+var whatAmIDoingNow = function () {
 prompting()
-if (upperCaseChoice.includes(passwordInfo)) {
-    arrayPassword = arrayPassword + alphaUpper 
+if (passwordInfo.includes(upperCaseChoice)) {
+    arrayPassword = arrayPassword.concat(alphaUpper)
 }
 if (lowerCaseChoice.includes(passwordInfo)) {
-    arrayPassword = arrayPassword + alphaLower;
+    arrayPassword = arrayPassword.concat(alphaLower)
 }
 if (symbolCaseChoice.includes(passwordInfo)) {
-    arrayPassword = arrayPassword + possibleSymbols
+    arrayPassword = arrayPassword.concat(possibleSymbols)
 }
 if (numberCaseChoice.includes(passwordInfo)) {
-    arrayPassword = arrayPassword + possibleNumbers
+    arrayPassword = arrayPassword.concat(possibleNumbers);
 }
+}
+whatAmIDoingNow ()
 
 console.log(arrayPassword);
 console.log(pwLength);
@@ -77,26 +88,71 @@ console.log(upperCaseChoice);
 console.log(lowerCaseChoice);
 console.log(symbolCaseChoice);
 console.log(numberCaseChoice);
+console.log(typeof arrayPassword);
 
-function random(input) {
-    var link = Math.floor(Math.random() * input.length);
-    var koolaid = input[link];
-    return koolaid;
+var fuck = []
+
+for (i = 0; i < pwLength; i++) {
+var randPassword = arrayPassword[Math.floor(Math.random() * arrayPassword.length)]
+
+console.log(randPassword.toString());
+
 }
 
 
-var passwordArray = (passwordInfo.join());
-console.log(passwordArray.length)
+// var ThisIsYourPassword = function() {}
+//     var yourNewPassword = [];
+//     for (var i = 0; i <= pwLength.length; i++){
+//     (Math.floor(Math.random()) * arrayPassword)
+//     [i].push(yourNewPassWord);
+// }
 
-function generatePassword() {
-    var finalPassword = [i]
-    for (var i = 0; i < pwLength; i++) {
-        Math.floor(Math.random()*passwordArray.length - 1);
-console.log(finalPassword.toString(","))
-    }
-}
+// console.log(yourNewPassword);
+// console.log(ThisIsYourPassword());
 
 
+
+
+
+
+
+
+
+
+
+// function random(input) {
+//     var link = Math.floor(Math.random() * input.length);
+//     var koolaid = input[link];
+//     return koolaid;
+// }
+
+
+// var passwordArray = (passwordInfo.join());
+// console.log(passwordArray.length)
+
+// var finalPassword = {
+//     for (var i = 0; i < pwLength; i++) {
+//         Math.floor(Math.random()*passwordArray.length - 1);
+// console.log(finalPassword.toString(","))
+//     }
+// }
+
+// for (var i = 0; i < pwLength.length; i++){
+//     var fuckingPassword = ""
+//     fuckingPassword.push(Math.floor(Math.random() * passwordArray-1))
+//     console.log(fuckingPassword);
+// }
+
+// Write password to the #password input
+// function writePassword() {
+//     var password = generatePassword();
+//     var passwordText = document.querySelector(“#password”);
+//      passwordText.value = password;
+//      }
+//   // Add event listener to generate button
+
+
+// generateBtn.addEventListener("click”, writePassword)l
 
 
 // var getRandomPassword = function () {
@@ -130,4 +186,4 @@ console.log(finalPassword.toString(","))
 //   passwordText.value = password;
 // }
 // // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword)
