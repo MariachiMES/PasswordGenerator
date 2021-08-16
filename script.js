@@ -93,11 +93,28 @@ console.log(typeof arrayPassword);
 var fuck = []
 
 for (i = 0; i < pwLength; i++) {
-var randPassword = arrayPassword[Math.floor(Math.random() * arrayPassword.length)]
-
-console.log(randPassword.toString());
+var randPassword = fuck += arrayPassword[Math.floor(Math.random() * arrayPassword.length)]
 
 }
+console.log(randPassword);
+
+var validator = function () {
+    if (passwordInfo.includes(upperCaseChoice) && alphaUpper.includes(!randPassword)) {
+        generatePassword()
+    }
+    if (passwordInfo.includes(lowerCaseChoice) && alphaLower.includes(!randPassword)) {
+        generatePassword()
+    }
+    if (passwordInfo.includes(symbolCaseChoice) && possibleSymbols.includes(!randPassword)) {
+        generatePassword()
+    }
+    if (passwordInfo.includes(numberCaseChoice) && possibleNumbers.includes(!randPassword)) {
+        generatePassword()
+    }
+    }
+    validator()
+
+
 
 
 // var ThisIsYourPassword = function() {}
